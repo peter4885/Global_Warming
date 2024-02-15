@@ -1,5 +1,5 @@
 # Global_Warming
-![alt text](./readme_img/BLASTbrandkit.png)
+![alt text](BLASTbrandkit.png)
 Demo for blast bigbang competition
 This Demo of P2E game on Blast sepolia testnet.
 
