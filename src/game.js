@@ -17,7 +17,16 @@ Game.prototype = {
     create: function() {
         var width = this.game.width;
         var height = this.game.height;
+        
+        let walletConnected = false;
 
+        if (!walletConnected) {
+            this.createConnectWalletButton();
+        } else {
+            this.initGame();
+        }
+    },
+    initGame: function() {
         this.game.world.setBounds(-width, -height, width*2, height*2);
     	this.game.stage.backgroundColor = '#444';
 
@@ -60,13 +69,15 @@ Game.prototype = {
      * Main update loop
      */
     update: function() {
-        //update game components
-        for (var i = this.game.snakes.length - 1 ; i >= 0 ; i--) {
-            this.game.snakes[i].update();
-        }
-        for (var i = this.foodGroup.children.length - 1 ; i >= 0 ; i--) {
-            var f = this.foodGroup.children[i];
-            f.food.update();
+        if (gameStarted) {
+            //update game components
+            for (var i = this.game.snakes.length - 1 ; i >= 0 ; i--) {
+                this.game.snakes[i].update();
+            }
+            for (var i = this.foodGroup.children.length - 1 ; i >= 0 ; i--) {
+                var f = this.foodGroup.children[i];
+                f.food.update();
+            }
         }
     },
     getFoodEaten: function() {
@@ -93,6 +104,22 @@ Game.prototype = {
                 snake.headPath[i].x + Util.randomInt(-10,10),
                 snake.headPath[i].y + Util.randomInt(-10,10)
             );
+        }
+    },
+    createConnectWalletButton: function() {
+        const connectButton = document.createElement('button');
+        connectButton.innerHTML = 'Connect Wallet';
+        connectButton.addEventListener('click', this.connectWallet.bind(this));
+        document.body.appendChild(connectButton);
+    },
+    connectWallet: async function() {
+        try {
+            await window.ethereum.enable();
+            walletConnected = true;
+
+            this.initGame();
+        } catch (error) {
+            console.error('Wallet connection error:', error);
         }
     }
 };
