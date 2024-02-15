@@ -1,5 +1,5 @@
 # Global_Warming
-![alt text](BLASTbrandkit.png)
+![alt text](./readme_img/BLASTbrandkit.png)
 Demo for blast bigbang competition
 This Demo of P2E game on Blast sepolia testnet.
 
@@ -21,4 +21,4 @@ Killed snakes yield 0.8x the food of live snakes
 Of the remaining 20% of food, 75% becomes food that is scattered 
 uniformly on the floor, and the remaining 25% becomes the protocol's revenue.
 
-![alt text](Token_flow.png)
+![alt text](./readme_img/Token_flow.png)
