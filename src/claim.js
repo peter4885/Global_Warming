@@ -1,8 +1,14 @@
+import { FOOD_ADDRESS } from '../contracts/address';
+import fs from 'fs'; 
+
+
 const Web3 = require('web3');
 const WalletConnectProvider = require('@walletconnect/web3-provider');
 
-const contractABI = ;
-const contractAddress = ;
+const abiFilePath = '../contracts/abi.json';
+
+const contractAddress = FOOD_ADDRESS;
+const contractABI = JSON.parse(fs.readFileSync(abiFilePath, 'utf-8'));
 
 
 const provider = new WalletConnectProvider({
@@ -16,8 +22,17 @@ const web3 = new Web3(provider);
 
 const contract = new web3.eth.Contract(contractABI, contractAddress);
 
+
+async function connectWallet() {
+    if (!provider.connected) {
+      await provider.enable(); 
+    }
+  }
+
+  
 async function claimTokens(score) {
   try {
+    await connectWallet();
     const accounts = await web3.eth.getAccounts();
     const userAddress = accounts[0];
 
