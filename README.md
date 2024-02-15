@@ -1,5 +1,7 @@
 # Global_Warming
-This is demo for blast bigbang competition
+![alt text](BLASTbrandkit.png)
+Demo for blast bigbang competition
+This Demo of P2E game on Blast sepolia testnet.
 
 # Original slither.io game rules
 As the worm consumes food from the ground, it grows in length and size
