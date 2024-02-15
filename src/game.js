@@ -17,16 +17,7 @@ Game.prototype = {
     create: function() {
         var width = this.game.width;
         var height = this.game.height;
-        
-        let walletConnected = false;
-
-        if (!walletConnected) {
-            this.createConnectWalletButton();
-        } else {
-            this.initGame();
-        }
-    },
-    initGame: function() {
+        this.createConnectWalletButton();
         this.game.world.setBounds(-width, -height, width*2, height*2);
     	this.game.stage.backgroundColor = '#444';
 
@@ -69,16 +60,16 @@ Game.prototype = {
      * Main update loop
      */
     update: function() {
-        if (gameStarted) {
-            //update game components
-            for (var i = this.game.snakes.length - 1 ; i >= 0 ; i--) {
-                this.game.snakes[i].update();
-            }
-            for (var i = this.foodGroup.children.length - 1 ; i >= 0 ; i--) {
-                var f = this.foodGroup.children[i];
-                f.food.update();
-            }
+        
+        //update game components
+        for (var i = this.game.snakes.length - 1 ; i >= 0 ; i--) {
+            this.game.snakes[i].update();
         }
+        for (var i = this.foodGroup.children.length - 1 ; i >= 0 ; i--) {
+            var f = this.foodGroup.children[i];
+            f.food.update();
+        }
+        
     },
     getFoodEaten: function() {
         return this.foodEaten;
@@ -114,10 +105,14 @@ Game.prototype = {
     },
     connectWallet: async function() {
         try {
+            // 사용자에게 지갑 연결 요청
             await window.ethereum.enable();
-            walletConnected = true;
-
-            this.initGame();
+    
+            // 연결된 지갑의 주소 가져오기
+            const accounts = await web3.eth.getAccounts();
+            const connectedAddress = accounts[0];
+    
+            alert(`Wallet Connected: ${connectedAddress}`);
         } catch (error) {
             console.error('Wallet connection error:', error);
         }
