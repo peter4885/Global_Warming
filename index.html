@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Slither.io Clone - Loonride Example</title>
+    <script src="lib/phaser.min.js"></script>
+    <script src="src/game.js"></script>
+    <script src="src/snake.js"></script>
+    <script src="src/playerSnake.js"></script>
+    <script src="src/botSnake.js"></script>
+    <script src="src/eye.js"></script>
+    <script src="src/eyePair.js"></script>
+    <script src="src/shadow.js"></script>
+    <script src="src/food.js"></script>
+    <script src="src/util.js"></script>
+    <script src="src/claim.js"></script>
+
+</head>
+
+<body>
+    <p>beta</p>
+    <div id="foodEatenDisplay">Food Eaten: 0</div>
+
+    <a id="claimFood">Claim Food</a>
+    
+    <script>
+        (function() {
+            var game = new Phaser.Game(800, 500, Phaser.AUTO, null);
+    
+            game.state.add('Game', Game);
+            game.state.start('Game');
+            
+        })();
+        document.getElementById("claimFood").addEventListener("click", function() {
+            // 클릭 이벤트가 발생했을 때 claim.js 실행
+            console.log("Contract call");
+            
+            console.log(game.foodEaten);
+            });
+        // 추가된 부분 끝
+    </script>
+
+</body>
+</html>
