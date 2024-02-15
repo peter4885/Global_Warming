@@ -24,20 +24,19 @@
     <button id="claimFood">Claim Food</button>
     
     <script>
+        var game;
         (function() {
-            var game = new Phaser.Game(800, 500, Phaser.AUTO, null);
+            game = new Phaser.Game(800, 500, Phaser.AUTO, null);
     
             game.state.add('Game', Game);
             game.state.start('Game');
-            
         })();
+
         document.getElementById("claimFood").addEventListener("click", function() {
-            // 클릭 이벤트가 발생했을 때 claim.js 실행
             console.log("Contract call");
             
-            console.log(game.foodEaten);
+            claimTokens(food.Eaten);
             });
-        // 추가된 부분 끝
     </script>
 
 </body>
