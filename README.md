@@ -31,3 +31,26 @@ Of the remaining 20% of food, 75% becomes food that is scattered
 uniformly on the floor, and the remaining 25% becomes the protocol's revenue.
 
 ![alt text](./readme_img/Token_flow.png)
+
+# How to run
+1. Clone this project
+'''
+git clone https://github.com/peter4885/Global_Warming.git
+'''
+
+2. Install dependencies
+'''
+npm init
+npm install phaser
+npm install web3
+'''
+
+3. Install http-server globally
+'''
+npm install -g http-server
+'''
+
+4. Run the server
+'''
+http-server
+'''
