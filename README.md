@@ -1,7 +1,6 @@
 # Global_Warming
-<div align="center">
-  ![alt text](readme_img/BLASTbrandkit.png)
-</div>
+
+<p align="center"><img src="readme_img/BLASTbrandkit.png"></p>
 
 Demo for blast bigbang competition 
 
