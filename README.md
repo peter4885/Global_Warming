@@ -6,13 +6,15 @@ Demo for blast bigbang competition
 
 This Demo of P2E game on Blast sepolia testnet.
 
+Great thanks for @knagaitsev https://github.com/knagaitsev/slither.io-clone
+
 # Original slither.io game rules
 As the worm consumes food from the ground, it grows in length and size
 
-When the food bumps into another worm, it is converted into FOOD
+When the food bumps into another worm, it is converted into FOOD token
 
 # Game rules added in Web3.ver
-Tokenize existing food (food = worm body = token).
+Tokenize existing food (food = worm body = FOOD token).
 
 You grow your worms by killing your opponent's worms or collecting food from the floor.
 
