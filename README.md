@@ -1,4 +1,4 @@
-# Global_Warming
+# Global_Worming
 
 <p align="center"><img src="readme_img/BLASTbrandkit.png"></p>
 
@@ -31,13 +31,15 @@ Killed worms yield 0.8x the food of live worms.
 
 Of the remaining 20% of food, 75% becomes food that is scattered uniformly on the floor, and the remaining 25% becomes the protocol's revenue.
 
+Total supply would be 1billion FOOD.
+
 ![alt text](./readme_img/Token_flow.png)
 
 # How to run
 1. Clone this project
 
 ```
-git clone https://github.com/peter4885/Global_Warming.git
+git clone https://github.com/peter4885/Global_Worming.git
 ```
 
 2. Install dependencies
